@@ -30,6 +30,17 @@ angular.module("TodoApp",[])
         console.log(todoList);
     }
 
+    todoList.remaining=function()
+    {
+        var count=0;
+        angular.forEach(todoList.todos,function(todo)
+        {
+            if(todo.done==false)
+            count++;
+        })
+        return count;
+    }
+
     todoList.delete=function()
     {
         var oldArray=todoList.todos;

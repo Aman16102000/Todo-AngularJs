@@ -8,16 +8,22 @@
     <script src="todo.js"></script>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/twitter-bootstrap/2.0.4/css/bootstrap-combined.min.css">
-
+    <style>
+        .mainDiv{
+            margin-left: auto;
+            margin-right: auto;
+           width: 8em;
+        }
+    </style>
     <title>Document</title>
 </head>
 <body class="container">
-
-    <div ng-controller="TodoController as todoList">
+    <div ng-controller="TodoController as todoList" class="mainDiv">
+        <div > {{todoList.remaining()}} of remaining {{todoList.todos.length}}</div>
         <div class="row">
             <a href="" ng-click="todoList.delete()">delete</a>
         </div>
-        <div class="row">    
+        <div class="row">
             <form ng-submit="todoList.add()">
                 <input type="text" ng-model="todoList.text" />
                 <input type="submit" value="add" class="btn-primary" />
